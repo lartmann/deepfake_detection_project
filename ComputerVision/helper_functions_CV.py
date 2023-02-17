@@ -168,7 +168,7 @@ def plot_loss_curves(history):
   plt.show()
 
   
-def plot_loss_curves_2(history):
+def plot_accuracy(history):
   """
   Plots the accuracy for a given model
   Args:
