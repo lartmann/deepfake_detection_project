@@ -1,4 +1,3 @@
-import mediapipe as mp
 import cv2
 from PIL import Image
 import numpy as np
@@ -157,6 +156,28 @@ def plot_loss_curves(history):
   plt.xlabel("Epochs")
   #plt.ylabel("")
   plt.legend()
+  
+  # plot accuracy
+  plt.plot(epochs, accuracy, label="Training accuracy")
+  plt.plot(epochs, val_accuracy, label="Validation accuracy")
+  plt.title("Accuracy")
+  plt.xlabel("Epochs")
+  #plt.ylabel("")
+  plt.legend()
+  
+  plt.show()
+
+  
+def plot_loss_curves_2(history):
+  """
+  Plots the accuracy for a given model
+  Args:
+    history: the history object returned by the fit method of a Keras model
+  """
+
+  accuracy = history.history["accuracy"]
+  val_accuracy = history.history["val_accuracy"]
+  epochs = range(len(accuracy))
   
   # plot accuracy
   plt.plot(epochs, accuracy, label="Training accuracy")
